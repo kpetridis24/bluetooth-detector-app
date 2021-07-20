@@ -11,3 +11,6 @@ As mentioned above, five pThreads are used during the app's lifetime cycle. Now 
 
 ~ Notes ~
 The binary file named "covidTrace.bin" contains all the close contacts that have been uploaded during the app's lifetime cycle. Regarding the use of queues, a structure containing two queues was created and passed as argument to the threads' functions. This gives the workers, access to both queues. The real "BTnearMe" function-calling-rate is tracked and as the app terminates, it is printed in a text file named "realBTtimer.txt".
+
+
+![alt text](https://github.com/kpetridis24/Bluetooth-Detector-App/issues/1#issue-948694725)
