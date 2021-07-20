@@ -12,5 +12,10 @@ As mentioned above, five pThreads are used during the app's lifetime cycle. Now 
 ~ Notes ~
 The binary file named "covidTrace.bin" contains all the close contacts that have been uploaded during the app's lifetime cycle. Regarding the use of queues, a structure containing two queues was created and passed as argument to the threads' functions. This gives the workers, access to both queues. The real "BTnearMe" function-calling-rate is tracked and as the app terminates, it is printed in a text file named "realBTtimer.txt".
 
+~ Statistical Analysis ~
 
+As discussed previously, the time-tracking ability of the app is essential for its functionality, however there can only be precision to a certain point. In this section, i illustrate a statistical analysis of the time-counting inaccuracy of the program. From the following graphs, we can make useful conclusions about the deviation between the time a function was called and the time it should have been called. 
 ![alt text](https://github.com/kpetridis24/Bluetooth-Detector-App/issues/1#issue-948694725)
+
+~ Conclusions ~
+The app was tested both on a PC and a Raspberry Pi 3b+. As the graphs depict, running the program on the PC resulted in significantly larger time-inaccuracy compared to running it on the Raspberry Pi. It is easily noticeable that the time deviation of the function's call on the RPi is one microsecond. On the other hand, on the PC it varies anywhere from ten up to 140 microseconds. That could be due to the much simpler architecture of the RPi (ARM) which may include less processes running parallel to the program's execution. Apart from the absolute value of deviation, the PC version seems to come with a more unpredictable distribution of the time a function is called relative to the time it should have been called. On the contrary, the timestamps measured on the RPi seem to form a standardized pattern.
